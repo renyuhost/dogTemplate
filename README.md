@@ -1,2 +1,2 @@
 # dogTemplate
-A javascript template which creates tags by users
+一个可以自定义标签的js模板引擎
