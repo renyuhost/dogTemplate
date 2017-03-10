@@ -1,0 +1,7 @@
+﻿<h4>我是C模板，我引用了D模板，并使用远程数据渲染D模板</h4>
+{{each list as value i}}
+	{{if i == 2}}
+		<li class="even">{{i}} : {{value}}</li>
+	{{/if}}
+{{/each}}
+{{include 'tpl-d.html' url='data.json'}}

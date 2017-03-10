@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>示例</title>
+</head>
+<body>
+<script src="../template.min.js"></script>
+
+<div id="demo"></div>
+
+<script id="tpl" type="text/html">
+<h1>{{name}}</h1>
+<ul>
+    {{each list as value i}}
+        {{if i%2 == 0}}
+            <li class="even">偶数方法 {{i}} : {{value}}</li>
+        {{else}}
+            <li class="odd">奇数方法 {{i}} : {{value}}</li>
+        {{/if}}
+    {{/each}}
+</ul>
+</script>
+ 
+<script>
+//将数据解析至id为demo的模板中并渲染到id为demo的元素中
+var data = {name : 'dogTemplate', list : ['render','compile','taglib','helper','config']}
+template('tpl', data, 'demo');
+</script>
+
+
+
+<a id="btn_0" href="###">点击引用模板(服务端模式)</a>
+<div id="include"></div>
+<script id="tpl_include" type="text/html">
+<h1>以下是我引入的静态模板</h1>
+{{include 'tpl'}}
+<h1>以下是我引入的远程模板</h1>
+{{include 'tpl-a.html'}}
+</script>
+ 
+<script>
+//动态加载模板
+document.getElementById('btn_0').onclick=function(){
+	template('tpl_include', data, 'include');
+};
+</script>
+
+</body>
+</html>

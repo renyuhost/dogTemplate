@@ -535,7 +535,7 @@
                             }catch(e){
                                 data = {};
                             }
-                        }
+                        }console.log(data);
                         html = render(data, options);
                     }
                 });

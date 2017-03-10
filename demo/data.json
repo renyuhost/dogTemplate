@@ -1,0 +1,10 @@
+﻿{
+	name : 'Dog',
+	sex : '男',
+	age : '18',
+	list : [
+		{lesson : '数学', mark : 99},
+		{lesson : '语文', mark : 96},
+		{lesson : '英语', mark : 59}
+	]
+}

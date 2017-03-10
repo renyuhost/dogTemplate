@@ -1,0 +1,7 @@
+﻿<h2>我是A模板，我引用了B模板</h3>
+{{each list as value i}}
+	{{if i == 0}}
+		<li class="even">{{i}} : {{value}}</li>
+	{{/if}}
+{{/each}}
+{{include 'tpl-b.html'}}
